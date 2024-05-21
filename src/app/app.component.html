@@ -1,17 +1,21 @@
 <div class="temparature-page">
   <h1>Temperatur Converter</h1>
   <div class="temp-page">
-      <form action="">
-          <div class="celsius">
-              <p class="text-header">Celsius</p>
-              <input type="text" class="cel"/>
-          </div>
-          <div class="fahrenheit">
-              <p class="text-header">Fahrenheit</p>
-              <input type="text" class="fah"/>
-          </div>
-      </form>
+      <!-- <form> -->
+        <div class="mb-3 mt-3">
+          <label  class="form-label text-header">Celsius:</label>
+          <input type="number" class="form-control" placeholder="Enter Celsius" 
+          [(ngModel)]="cel" (ngModelChange)="celsiusConverter($event)">
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-header">Fahrenheit:</label>
+          <input type="number" class="form-control" placeholder="Enter Fahrenheit" 
+          [(ngModel)]="fah" (ngModelChange)="fahrenheitConverter($event)">
+        </div>
+      <!-- </form> -->
   </div>
+  {{fah}}-{{cel}}
 </div>
+
 
 
