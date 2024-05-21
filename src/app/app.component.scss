@@ -1,0 +1,18 @@
+.temparature-page{
+    text-align: center;
+    border: 1px solid gray;
+    width: 50%;
+    margin-left: 30%;
+    background-color: lightblue;
+    border-radius: 10px;
+    padding: 15px 0;
+    .temp-page{
+        .celsius,.fahrenheit{
+            p{
+                margin-top: 20px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}
