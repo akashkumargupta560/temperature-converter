@@ -7,18 +7,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'temperature-converter';
-  cel!:number;
-  fah!:number
+  cel!:number |undefined;
+  fah!:number |undefined;
+  kel!:number |undefined;
   constructor(){}
   ngOnInit():void{}
-  celsiusConverter(_event:any){
-    const celNum = ((Number(this.fah) -32) * (5 / 9));
-    this.cel = celNum;
-    console.log("hello"+celNum)
+  celsiusConverter(){
+    //formula of celsius (°C) * 9/5) + 32.
+    if(this.cel !=null){
+      this.fah = ((this.cel*9)/5)+32;
+      this.fah = Math.round(this.fah*100)/100;
+      this.kel=Math.round((273.15+this.cel)*100)/100;
+    }else{
+      this.fah= undefined;
+      this.kel = undefined;
+    }
   }
-  fahrenheitConverter(_event:any){
-    const fahNum = ((Number(this.cel) * (5 /9) + 32 ));
-    this.fah = fahNum;
-    console.log("hello"+fahNum)
+  fahrenheitConverter(){
+    if(this.fah !=null){
+      this.cel = ((this.fah-32)*5)/9;
+      this.cel = Math.round(this.cel*100)/100;
+      this.kel=Math.round((273.15+this.cel)*100)/100;
+    }else{
+      this.cel= undefined;
+      this.kel = undefined;
+    }
+  }
+  kelvinConverter(){
+    if(this.kel!=null){
+     this.cel =(this.kel-273.15);
+     this.cel =Math.round(this.cel*100)/100;
+     this.fah =((this.cel*9)/5)+32;
+     this.fah =Math.round(this.fah*100)/100;
+    }else{
+      this.cel= undefined;
+      this.fah= undefined;                                                          
+    }
   }
 }

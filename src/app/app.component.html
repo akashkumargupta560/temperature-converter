@@ -1,21 +1,37 @@
 <div class="temparature-page">
-  <h1>Temperatur Converter</h1>
-  <div class="temp-page">
-      <!-- <form> -->
-        <div class="mb-3 mt-3">
-          <label  class="form-label text-header">Celsius:</label>
-          <input type="number" class="form-control" placeholder="Enter Celsius" 
-          [(ngModel)]="cel" (ngModelChange)="celsiusConverter($event)">
-        </div>
-        <div class="mb-3">
-          <label class="form-label text-header">Fahrenheit:</label>
-          <input type="number" class="form-control" placeholder="Enter Fahrenheit" 
-          [(ngModel)]="fah" (ngModelChange)="fahrenheitConverter($event)">
-        </div>
-      <!-- </form> -->
+  <div class="header">
+    <h1>Temperatur Converter</h1>
   </div>
-  {{fah}}-{{cel}}
+  <div class="temp-page">
+    <div class="mb-3 mt-3">
+      <label class="form-label text-header">Celsius(&deg;C):</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Celsius"
+        [(ngModel)]="cel"
+        (input)="celsiusConverter()"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label text-header">Fahrenheit(&deg;F):</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Fahrenheit"
+        [(ngModel)]="fah"
+        (ngModelChange)="fahrenheitConverter()"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label text-header">Kelvin(&deg;K):</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Kelvin"
+        [(ngModel)]="kel"
+        (ngModelChange)="kelvinConverter()"
+      />
+    </div>
+  </div>
 </div>
-
-
-
